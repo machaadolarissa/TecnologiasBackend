@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Usuário Salvo</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="/sobre">Sobre</a></li>
+                <li><a href="/buscar">Buscar Usuário</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="success-message">
+        <h1>Usuário Salvo com Sucesso!</h1>
+        <p>Usuário <span id="username"></span> foi salvo com sucesso.</p>
+        <a href="/">Home</a>
+    </main>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        document.getElementById('username').textContent = name;
+    </script>
+</body>
+</html>

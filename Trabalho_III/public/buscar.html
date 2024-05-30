@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Buscar Usuário</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/sobre">Sobre</a></li>
+                <li><a href="/buscar">Buscar Usuário</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Bem-vindo à Página Buscar Usuário</h1>
+        <p>Essa é a página responsável por buscar usuários no Banco de Dados</p>
+        <form action="/get/user" method="GET">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+            <button type="submit">Buscar Usuário</button>
+        </form>
+    </main>
+</body>
+</html>

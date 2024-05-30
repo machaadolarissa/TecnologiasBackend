@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Usuário Econtrado</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="/sobre">Sobre</a></li>
+                <li><a href="/buscar">Buscar Usuário</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="success-message">
+        <h1>Usuário Encontrado com Sucesso!</h1>
+        <p>Id: <span id="id"></span> Nome: <span id="username"></span></p>
+        <a href="/">Home</a>
+    </main>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+        document.getElementById('id').textContent = id;
+        const name = urlParams.get('name');
+        document.getElementById('username').textContent = name;
+    </script>
+</body>
+</html>
