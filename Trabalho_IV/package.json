@@ -1,0 +1,23 @@
+{
+  "name": "trabalho_iv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/machaadolarissa/TecnologiasBackend.git"
+  },
+  "author": "Larissa Machado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/machaadolarissa/TecnologiasBackend/issues"
+  },
+  "homepage": "https://github.com/machaadolarissa/TecnologiasBackend#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
+  }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Contato</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Contato</h1>
+  <form id="contatoForm" action="/contato" method="POST">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required><br><br>
+    
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required>
+    <span id="emailError" style="color: red; display: none;">Endereço de e-mail inválido</span><br><br>
+    
+    <label for="comentarios">Comentários:</label><br>
+    <textarea id="comentarios" name="comentarios" rows="4" cols="50" required></textarea><br><br>
+    
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script>
+    document.getElementById('contatoForm').addEventListener('submit', function(event) {
+      const emailInput = document.getElementById('email');
+      const emailError = document.getElementById('emailError');
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(emailInput.value)) {
+        emailError.style.display = 'inline'; 
+        event.preventDefault(); 
+        setTimeout(function() {
+          emailError.style.display = 'none'; 
+        }, 3000);
+      } else {
+        emailError.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
