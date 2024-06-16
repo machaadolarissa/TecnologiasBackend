@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Comentários</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/form">Formulário</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <form id="commentForm" action="/form" method="POST" onsubmit="return validateForm()">
+            <label for="username">Nome de Usuário:</label>
+            <input type="text" id="username" name="username" required><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <span id="emailError" class="error-message">Endereço de e-mail inválido</span><br>
+            
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required><br>
+            
+            <label for="comment">Comentário:</label>
+            <textarea id="comment" name="comment" required></textarea><br>
+            
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+    <footer>
+        <p>Copyright &copy; 2024</p>
+    </footer>
+    <script>
+        function validateForm() {
+            const emailInput = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(emailInput.value)) {
+                emailError.style.display = 'inline';
+                setTimeout(function() {
+                    emailError.style.display = 'none';
+                }, 3000);
+                return false;
+            } else {
+                emailError.style.display = 'none';
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
